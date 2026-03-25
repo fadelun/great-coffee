@@ -7,7 +7,9 @@
       "Bash(mv code.html design-system.md PRD.md _backup/)",
       "Bash(yes \"\")",
       "Bash(npm install:*)",
-      "Bash(npx shadcn@latest init -d)"
+      "Bash(npx shadcn@latest init -d)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm run:*)"
     ]
   }
 }

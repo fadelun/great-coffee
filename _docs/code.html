@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Great Coffee | The Art of Roasting</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;1,400;1,700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#4f342b",
+              "on-secondary-container": "#795f24",
+              error: "#ba1a1a",
+              outline: "#827471",
+              "on-tertiary-fixed-variant": "#4c4542",
+              "on-primary-fixed-variant": "#5d4037",
+              "tertiary-fixed-dim": "#cfc4c0",
+              surface: "#fafaf5",
+              "inverse-surface": "#2f312e",
+              tertiary: "#292421",
+              "inverse-on-surface": "#f1f1ec",
+              "surface-container": "#eeeee9",
+              "tertiary-fixed": "#ece0dc",
+              "surface-container-lowest": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#e7bdb1",
+              "surface-bright": "#fafaf5",
+              "on-tertiary-fixed": "#201a18",
+              "on-background": "#1a1c19",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "secondary-fixed-dim": "#e4c27d",
+              "surface-variant": "#e3e3de",
+              primary: "#371f17",
+              background: "#fafaf5",
+              "outline-variant": "#d4c3bf",
+              "on-error": "#ffffff",
+              "surface-dim": "#dadad5",
+              "tertiary-container": "#403936",
+              "secondary-container": "#ffdb94",
+              "on-primary-container": "#c29c90",
+              "secondary-fixed": "#ffdf9f",
+              "on-secondary": "#ffffff",
+              secondary: "#745b20",
+              "on-tertiary-container": "#aca29f",
+              "on-surface-variant": "#504442",
+              "surface-container-highest": "#e3e3de",
+              "surface-container-low": "#f4f4ef",
+              "on-primary-fixed": "#2c160e",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#5a4309",
+              "on-secondary-fixed": "#261a00",
+              "surface-tint": "#77574d",
+              "primary-fixed": "#ffdbd0",
+              "on-surface": "#1a1c19",
+              "inverse-primary": "#e7bdb1",
+              "surface-container-high": "#e8e8e3",
+            },
+            fontFamily: {
+              headline: ["Newsreader"],
+              body: ["Manrope"],
+              label: ["Manrope"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+      .editorial-shadow {
+        box-shadow: 0 40px 40px rgba(26, 28, 25, 0.04);
+      }
+      .bg-espresso-gradient {
+        background: linear-gradient(135deg, #371f17 0%, #4f342b 100%);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container"
+  >
+    <!-- TopNavBar -->
+    <nav
+      class="fixed top-0 w-full z-50 bg-[#fafaf5]/80 backdrop-blur-md shadow-[0_40px_40px_rgba(26,28,25,0.04)]"
+    >
+      <div
+        class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto"
+      >
+        <div class="font-headline text-2xl font-bold italic text-primary">
+          Great Coffee
+        </div>
+        <div class="hidden md:flex gap-12 items-center">
+          <a
+            class="font-headline text-lg tracking-tight text-primary opacity-80 hover:opacity-100 hover:text-secondary transition-all duration-300"
+            href="#"
+            >Journal</a
+          >
+          <a
+            class="font-headline text-lg tracking-tight text-primary opacity-80 hover:opacity-100 hover:text-secondary transition-all duration-300"
+            href="#"
+            >Roasts</a
+          >
+          <a
+            class="font-headline text-lg tracking-tight text-primary opacity-80 hover:opacity-100 hover:text-secondary transition-all duration-300"
+            href="#"
+            >Brew Guides</a
+          >
+          <a
+            class="font-headline text-lg tracking-tight text-primary opacity-80 hover:opacity-100 hover:text-secondary transition-all duration-300"
+            href="#"
+            >Locations</a
+          >
+        </div>
+        <div class="flex items-center gap-6">
+          <button
+            class="material-symbols-outlined text-primary scale-98 active:opacity-70"
+            data-icon="shopping_bag"
+          >
+            shopping_bag
+          </button>
+          <button
+            class="md:hidden material-symbols-outlined text-primary"
+            data-icon="menu"
+          >
+            menu
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-24">
+      <!-- Hero Section: Vertical Storytelling -->
+      <section
+        class="relative min-h-[921px] flex items-center px-8 md:px-24 overflow-hidden"
+      >
+        <div
+          class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full max-w-screen-2xl mx-auto"
+        >
+          <div class="md:col-span-7 z-10">
+            <span
+              class="font-label text-sm tracking-[0.2em] uppercase text-secondary mb-6 block"
+              >The 2024 Collection</span
+            >
+            <h1
+              class="font-headline text-6xl md:text-8xl font-bold leading-[0.9] text-primary -tracking-wider mb-8"
+            >
+              The Art of <br />
+              <span class="italic font-normal serif">Slow Roasting.</span>
+            </h1>
+            <p
+              class="font-body text-xl text-on-surface-variant max-w-lg leading-relaxed mb-10"
+            >
+              A curated exploration into the chemical poetry of heat and bean.
+              Every batch is a unique monograph of flavor, climate, and craft.
+            </p>
+            <div class="flex flex-wrap gap-6">
+              <button
+                class="bg-espresso-gradient text-on-primary px-10 py-5 rounded-full font-medium hover:scale-105 transition-transform"
+              >
+                Explore the Roasts
+              </button>
+              <button
+                class="text-primary font-medium border-b-2 border-secondary/30 pb-1 hover:border-secondary transition-all"
+              >
+                Read the Journal
+              </button>
+            </div>
+          </div>
+          <div class="md:col-span-5 relative">
+            <div
+              class="aspect-[4/5] bg-surface-container-high rounded-xl overflow-hidden relative transform md:translate-x-12 editorial-shadow"
+            >
+              <img
+                alt="Artisan coffee roasting process"
+                class="w-full h-full object-cover"
+                data-alt="close-up of raw coffee beans spilling onto a dark wooden surface with warm atmospheric morning light and soft dust motes"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuANtI6pE1e0P3iTZevY5q3l1kCEweOC1HG1MYKYjMydqtMK9yZWlbnkryfu4ORk6lMhH1lwo_McRuud4HJ895rCQfR0A_-md1Ic6VFI9DqGJLnl5nQQYk7VJD3HIOcYCnTvG8ILUwivDy7k8LuMdxn8SgChdclGlBTUIMlW9PHB7e3zzhAufBnB6Kk1OL0I3g10-2DcMsPFQn65xgJGvybkthPTNxQs8pkeDBWpHNkW6gjuE11F1p4tvZ_QsL0G_lalZMRmIMGldswP"
+              />
+            </div>
+            <div
+              class="absolute -bottom-10 -left-10 w-48 h-48 bg-secondary-container rounded-full flex items-center justify-center p-8 text-center editorial-shadow hidden lg:flex"
+            >
+              <p
+                class="font-headline italic text-on-secondary-fixed-variant leading-tight"
+              >
+                Harvested with Intention
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Featured Grid: Minimalist Asymmetry -->
+      <section class="py-32 px-8 md:px-24 bg-surface-container-low">
+        <div class="max-w-screen-2xl mx-auto">
+          <div class="flex justify-between items-end mb-20">
+            <div class="max-w-xl">
+              <h2 class="font-headline text-4xl font-bold text-primary mb-4">
+                Seasonal Selections
+              </h2>
+              <p class="font-body text-on-surface-variant">
+                Our current roster of single-origin beans and signature blends,
+                roasted to order in small batches.
+              </p>
+            </div>
+            <a
+              class="hidden md:block font-label text-xs tracking-widest uppercase text-secondary border-b border-secondary/20 pb-1"
+              href="#"
+              >View All Collections</a
+            >
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+            <!-- Product 1 -->
+            <div class="group">
+              <div
+                class="aspect-[3/4] bg-surface-container-highest rounded-xl overflow-hidden mb-6 relative"
+              >
+                <img
+                  alt="Coffee bean packaging"
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  data-alt="minimalist matte black coffee bag standing on a stone plinth with dramatic side lighting and soft shadows"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHmnlVYas1-hpFjoBV74JCQYKrL_9Es_ovUcFE0pSW1GxiF-DEVrKHtJaKOAahLYzhG_h_7Yp6n1reb1ezfv9xeg78qyuDHLHZHtQxIDWFKU7FAzVKoPYS-lrbaTLE97L50Wlzeu2bBAcq0bSw4LpUzDQma8peti-3w6M7mPrkGel9iuHBeTf-DB6J-7rwea4juGqAJzrcen97yUG_qG-V3hG667DyuKuk4QDE1th4x5F2ln9mG-g4Csdrw_3WyFfRtRWJPbkM-tpS"
+                />
+                <div
+                  class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <button
+                    class="bg-surface w-12 h-12 rounded-full flex items-center justify-center editorial-shadow"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary"
+                      data-icon="add"
+                      >add</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-headline text-2xl font-bold text-primary">
+                    Ethiopia Yirgacheffe
+                  </h3>
+                  <p class="text-on-surface-variant text-sm mt-1 italic">
+                    Floral, Lemon, Bergamot
+                  </p>
+                </div>
+                <span class="font-body font-bold text-primary">$28</span>
+              </div>
+            </div>
+            <!-- Product 2 (Offset) -->
+            <div class="group md:mt-24">
+              <div
+                class="aspect-[3/4] bg-surface-container-highest rounded-xl overflow-hidden mb-6 relative"
+              >
+                <img
+                  alt="Fresh coffee beans"
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  data-alt="macro photograph of roasted dark coffee beans with oily texture reflecting warm studio lighting"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5jyqhyx58gXu_Q-yDvTUA2_-MQYjAwlyjpjWnWgk7re2BUBd-h5rwxRG1IovcFEbE2u6iLBw-zEbfF-jvtha_JUeYCtdFXM5iO1gSiR1rgMukJnlj77WWv3RFmxg_btfZ-ZUrS0LE_Sn0Jiude-vsYcQl6icsh7rlm-SK7UKynjI8Urp257y74vT6qBydKk8ykdi82-ROIG9cIFIJ9DcoqYcCEfRpZf1spHPjNI-4dmynEnzNGpodpTh2UP12adtkwj-_v1GJJGpo"
+                />
+                <div
+                  class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <button
+                    class="bg-surface w-12 h-12 rounded-full flex items-center justify-center editorial-shadow"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary"
+                      data-icon="add"
+                      >add</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-headline text-2xl font-bold text-primary">
+                    Midnight Blend
+                  </h3>
+                  <p class="text-on-surface-variant text-sm mt-1 italic">
+                    Dark Chocolate, Molasses, Smoke
+                  </p>
+                </div>
+                <span class="font-body font-bold text-primary">$24</span>
+              </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="group">
+              <div
+                class="aspect-[3/4] bg-surface-container-highest rounded-xl overflow-hidden mb-6 relative"
+              >
+                <img
+                  alt="Pour over coffee setup"
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                  data-alt="ceramic hand-crafted coffee dripper with white filter and dark coffee blooming under a stream of hot water"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsluzFMkGaEgxD-gJ7ktPkiEILpaSL9BPfEr2SdZi0Ua_rVzS3mZ7hRTnGIVhXf1d64R8V27J8SM8ayaXC2TC8ieJyZlqzdv3W8UXOAvYKneFna955Yd3vrnfcboNbKc-KyqPn5X4cV-speSaKzINxFXeTJG2iIJ3vZ1uiOaXVTqceCzHFDMky7rM20gqVA8tSjteJwnki6BaPNMOkt-fwtk2UfnrtD4fvZtx6RzE0zh82j39A1xdED0eyDaM8KRvY1lQflfbv36h4"
+                />
+                <div
+                  class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  <button
+                    class="bg-surface w-12 h-12 rounded-full flex items-center justify-center editorial-shadow"
+                  >
+                    <span
+                      class="material-symbols-outlined text-primary"
+                      data-icon="add"
+                      >add</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <div class="flex justify-between items-start">
+                <div>
+                  <h3 class="font-headline text-2xl font-bold text-primary">
+                    Colombia Huila
+                  </h3>
+                  <p class="text-on-surface-variant text-sm mt-1 italic">
+                    Caramel, Red Apple, Nutty
+                  </p>
+                </div>
+                <span class="font-body font-bold text-primary">$26</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Process Section: Large Imagery & Vertical Text -->
+      <section class="py-40 px-8 md:px-24">
+        <div
+          class="max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-24 items-center"
+        >
+          <div class="w-full md:w-1/2 relative">
+            <div
+              class="aspect-square bg-surface-container-high rounded-xl overflow-hidden editorial-shadow -rotate-2"
+            >
+              <img
+                alt="Roasting machinery"
+                class="w-full h-full object-cover"
+                data-alt="vintage industrial coffee roaster with glowing amber interior light and metallic textures in a dimly lit warehouse"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRbLWuRkZPmFHSQ5Q0q640dCbPWXERc7uTaPpV_IG4ecu-h3YXBp4GXTa8VWcXKg9MiEunroiG664_VVxVVZMPJoVp6VjrK_UNwNB0M5FFqtUSe55rkDsb9y8JydRr7aL03WovKo5Yo4gKeip1nZFAXXErOiCF4xX2vEfU_1mVq3d5F55mGTDB7rBy9GEicMr9M-o2nlO_8Cbld0VmRZ9-iJ3vPtq61RM2aTPJxqTTlG5PN0MFf42mK0mbQiQSDQeD6AND7d62v5Nn"
+              />
+            </div>
+            <div
+              class="absolute -top-12 -right-12 font-headline text-9xl text-surface-container opacity-50 select-none hidden lg:block"
+            >
+              01
+            </div>
+          </div>
+          <div class="w-full md:w-1/2">
+            <div class="max-w-md">
+              <h2
+                class="font-headline text-5xl font-bold text-primary mb-8 leading-tight italic"
+              >
+                Precision in every temperature spike.
+              </h2>
+              <div class="space-y-8">
+                <div class="border-l-4 border-secondary pl-6">
+                  <h4 class="font-bold text-primary text-xl mb-2">
+                    The Sourcing
+                  </h4>
+                  <p class="text-on-surface-variant leading-relaxed">
+                    We partner directly with family estates in high-altitude
+                    regions to ensure fair trade and exceptional quality.
+                  </p>
+                </div>
+                <div class="border-l-4 border-surface-container-highest pl-6">
+                  <h4 class="font-bold text-primary text-xl mb-2">
+                    The Maillard Reaction
+                  </h4>
+                  <p class="text-on-surface-variant leading-relaxed">
+                    Our roasters monitor every second to capture the peak
+                    aromatic profile of each specific bean varietal.
+                  </p>
+                </div>
+                <div class="border-l-4 border-surface-container-highest pl-6">
+                  <h4 class="font-bold text-primary text-xl mb-2">
+                    The Resting
+                  </h4>
+                  <p class="text-on-surface-variant leading-relaxed">
+                    Every roast is degassed for precisely 48 hours before
+                    packaging to stabilize the complex flavor notes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Refined Testimonial Section -->
+      <section class="py-32 bg-primary text-surface overflow-hidden relative">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <img
+            alt="Atmospheric coffee shop"
+            class="w-full h-full object-cover"
+            data-alt="ethereal blurred background of steam rising from a coffee machine in a sun-drenched industrial loft"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxfIu8K08tgRPWJ5XGGfIFZYkjI1kpFmMzJHcnxcW07jjnNPidULlRaKmPIVw0L-nHh0kTc84Hfdu1D9gBimCyk1bFWBq-VMnXbsJhGO9ErHOZomhgPCL1kTKs1h3HRps3CznLZtftJE_j2WB59LAxT0o_HPAz90hxpNGDsPk0Kpl0pEp5JWixv187WKTEtCPKuju_X5enfq6wM7NTWq3Am5f6-rRzE6nPWLdyNHk8VqFNN59SJAcgsgmz-kfGlZzDMJ9xHIrJCnng"
+          />
+        </div>
+        <div class="max-w-screen-xl mx-auto px-8 relative z-10 text-center">
+          <span
+            class="material-symbols-outlined text-secondary text-5xl mb-8"
+            data-icon="format_quote"
+            >format_quote</span
+          >
+          <blockquote
+            class="font-headline text-3xl md:text-5xl italic leading-tight mb-12 max-w-4xl mx-auto"
+          >
+            "Great Coffee isn't just a supplier; they are curators of a daily
+            ritual. The depth of flavor in their single-origin roasts has
+            completely redefined my morning."
+          </blockquote>
+          <div class="flex flex-col items-center">
+            <div
+              class="w-16 h-16 rounded-full overflow-hidden mb-4 border-2 border-secondary/30"
+            >
+              <img
+                alt="Customer profile"
+                class="w-full h-full object-cover"
+                data-alt="portrait of a woman with a serene expression in natural lighting with soft focus background"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhsL1yqPf8vpKQ_3f5aPDXq2REMK9qTxwxznxtXePAB2mqwTU_eUMLqng03PPiVV2II5YTAjBPI6qzHb1BRwfSy7v27Dj0i2QFZGMUFnKq7MnGVrB-SaWqR2CyZv824olEejsbGfZHlS_K-3aZ-C3qzo3xyLl3FseShYPflGMz2ozBk_ldojJMp6xxfLaAF1ltOxYLvJ7WskmRZEOGGfN0HN42kagiyfELvKxruOZElk8_ZldkO_zy9e4o26h3BR1eSJLQBmqMI6Gg"
+              />
+            </div>
+            <cite
+              class="not-italic font-label uppercase tracking-widest text-sm text-on-primary-container"
+              >Elena Rossi — Food Critic</cite
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Editorial Feature Card -->
+      <section class="py-40 px-8 md:px-24">
+        <div class="max-w-screen-2xl mx-auto">
+          <div
+            class="bg-surface-container-low rounded-xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-16 relative"
+          >
+            <div
+              class="w-full md:w-2/5 -ml-8 md:-ml-24 shadow-2xl rounded-xl overflow-hidden transform md:scale-110"
+            >
+              <img
+                alt="Coffee magazine"
+                class="w-full h-full object-cover aspect-square"
+                data-alt="overhead view of a beautifully designed coffee magazine and a ceramic mug on a marble table with soft morning shadows"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXtLg3qorGJoL-buAVi9yTFRgN_Iy4Puh7QSMtqTX-draiGJmTIu0NBntspKB8k_KLAIzykuUKy59eg4mSyu0Mm1W6BVtwbwfXB4DEANbhBO_9PnIjtiSAfdFi5px2hURCnb551mYOcernc5KN7Vu3kQrQD7I5WAEn-4KvBer2f2LZDgYUT8nHKS4vR_y_Oqkxj_NP-psVhpe0UJMsQvSxwQpiYzbkTRAzrcS1A6PrVabzWhphDPdlglOyrW1ChYH7Nblb5Bm62BcL"
+              />
+            </div>
+            <div class="w-full md:w-3/5">
+              <span
+                class="font-label text-xs tracking-widest text-secondary uppercase mb-4 block"
+                >The Weekly Journal</span
+              >
+              <h2
+                class="font-headline text-5xl font-bold text-primary mb-6 leading-tight"
+              >
+                Mastering the V60: A Purist's Guide to Water Temp.
+              </h2>
+              <p
+                class="font-body text-on-surface-variant text-lg leading-relaxed mb-8"
+              >
+                Dive deep into the science of extraction. Our head roaster
+                breaks down why a 2-degree shift in water temperature can be the
+                difference between a muddled cup and a bright, crystalline
+                experience.
+              </p>
+              <button
+                class="bg-primary text-on-primary px-8 py-4 rounded-full font-medium hover:bg-primary-container transition-colors"
+              >
+                Read the Article
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full pt-24 pb-12 bg-surface-container-low">
+      <div
+        class="flex flex-col md:flex-row justify-between items-start px-12 gap-12 max-w-screen-2xl mx-auto"
+      >
+        <div class="max-w-xs">
+          <div class="font-headline text-xl font-bold text-primary mb-6">
+            Great Coffee
+          </div>
+          <p class="font-body text-sm text-on-surface-variant leading-relaxed">
+            Elevating the daily ritual through artisan roasting and sustainable
+            sourcing. Join our mailing list for exclusive roasts and brew
+            guides.
+          </p>
+          <div class="mt-8 flex gap-4">
+            <input
+              class="bg-transparent border-b border-outline-variant py-2 focus:border-primary outline-none text-sm w-full"
+              placeholder="Your email"
+              type="email"
+            />
+            <button
+              class="material-symbols-outlined text-primary"
+              data-icon="arrow_forward"
+            >
+              arrow_forward
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-24">
+          <div class="flex flex-col gap-4">
+            <h5
+              class="font-label text-xs tracking-widest uppercase font-bold text-primary"
+            >
+              Shop
+            </h5>
+            <a
+              class="font-body text-sm text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 decoration-secondary/30 transition-all"
+              href="#"
+              >Roasts</a
+            >
+            <a
+              class="font-body text-sm text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 decoration-secondary/30 transition-all"
+              href="#"
+              >Equipment</a
+            >
+            <a
+              class="font-body text-sm text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 decoration-secondary/30 transition-all"
+              href="#"
+              >Subscriptions</a
+            >
+          </div>
+          <div class="flex flex-col gap-4">
+            <h5
+              class="font-label text-xs tracking-widest uppercase font-bold text-primary"
+            >
+              About
+            </h5>
+            <a
+              class="font-body text-sm text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 decoration-secondary/30 transition-all"
+              href="#"
+              >Sustainability</a
+            >
+            <a
+              class="font-body text-sm text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 decoration-secondary/30 transition-all"
+              href="#"
+              >Wholesale</a
+            >
+            <a
+              class="font-body text-sm text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 decoration-secondary/30 transition-all"
+              href="#"
+              >Careers</a
+            >
+          </div>
+          <div class="flex flex-col gap-4">
+            <h5
+              class="font-label text-xs tracking-widest uppercase font-bold text-primary"
+            >
+              Legal
+            </h5>
+            <a
+              class="font-body text-sm text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 decoration-secondary/30 transition-all"
+              href="#"
+              >Privacy Policy</a
+            >
+            <a
+              class="font-body text-sm text-on-surface-variant hover:text-secondary hover:underline underline-offset-4 decoration-secondary/30 transition-all"
+              href="#"
+              >Shipping &amp; Returns</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-20 px-12 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-4 max-w-screen-2xl mx-auto"
+      >
+        <p class="font-body text-xs text-on-surface-variant opacity-70">
+          © 2024 Great Coffee Editorial. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <span
+            class="material-symbols-outlined text-primary opacity-60 cursor-pointer hover:opacity-100"
+            data-icon="public"
+            >public</span
+          >
+          <span
+            class="material-symbols-outlined text-primary opacity-60 cursor-pointer hover:opacity-100"
+            data-icon="share"
+            >share</span
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
