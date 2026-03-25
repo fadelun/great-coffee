@@ -5,7 +5,9 @@
       "Bash(mkdir -p _backup)",
       "Bash(mv code.html design-system.md PRD.md sample.index _backup/)",
       "Bash(mv code.html design-system.md PRD.md _backup/)",
-      "Bash(yes \"\")"
+      "Bash(yes \"\")",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init -d)"
     ]
   }
 }
