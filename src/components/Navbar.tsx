@@ -5,10 +5,12 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ShoppingBag } from "lucide-react";
 import { navLinks } from "@/lib/data";
+import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = useCallback(() => setIsOpen((prev) => !prev), []);
+  const { totalItems, openCart } = useCart();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glassmorphism border-b ghost-border">
@@ -35,18 +37,24 @@ export default function Navbar() {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
             <button
-              className="p-2 rounded-full hover:bg-surface-container-high transition-colors duration-300"
-              aria-label="Shopping bag"
+              onClick={openCart}
+              className="relative p-2 rounded-full hover:bg-surface-container-high transition-colors"
+              aria-label="Open cart"
             >
               <ShoppingBag className="w-5 h-5 text-primary" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-secondary text-white text-xs font-bold flex items-center justify-center">
+                  {totalItems > 99 ? "99+" : totalItems}
+                </span>
+              )}
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-full hover:bg-surface-container-high transition-colors"
             onClick={toggleMenu}
-            aria-label={isOpen ? "Close menu" : "Open menu"}
+            className="md:hidden p-2"
+            aria-label="Toggle menu"
           >
             {isOpen ? (
               <X className="w-6 h-6 text-primary" />
@@ -78,9 +86,15 @@ export default function Navbar() {
                   </Link>
                 ))}
                 <div className="pt-4 border-t ghost-border">
-                  <button className="flex items-center gap-3 text-primary font-medium">
+                  <button
+                    onClick={() => {
+                      openCart();
+                      setIsOpen(false);
+                    }}
+                    className="flex items-center gap-3 text-primary font-medium"
+                  >
                     <ShoppingBag className="w-5 h-5" />
-                    Cart (0)
+                    Cart ({totalItems})
                   </button>
                 </div>
               </div>
