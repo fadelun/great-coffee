@@ -154,6 +154,34 @@ export const testimonials = [
     role: "Regular Customer",
     image: "/images/testimonials/person2.jpg",
   },
+  {
+    id: 3,
+    quote: "I've been coming here for years and they never disappoint. The ambiance, the coffee, the staff—it's all perfect.",
+    author: "Emily Chen",
+    role: "Marketing Director",
+    image: "/images/testimonials/person3.jpg",
+  },
+  {
+    id: 4,
+    quote: "The flat white is hands down the best I've ever had. It's become my daily ritual without fail.",
+    author: "Marcus Johnson",
+    role: "Software Engineer",
+    image: "/images/testimonials/person4.jpg",
+  },
+  {
+    id: 5,
+    quote: "As a certified Q-grader, I can attest that Great Coffee is serving some of the finest specialty coffee in the city.",
+    author: "Dr. Lisa Rodriguez",
+    role: "Coffee Consultant",
+    image: "/images/testimonials/person5.jpg",
+  },
+  {
+    id: 6,
+    quote: "This place transformed my mornings. Their pour-over technique is something to behold—truly an art form.",
+    author: "David Kim",
+    role: "Graphic Designer",
+    image: "/images/testimonials/person6.jpg",
+  },
 ];
 
 export const processSteps = [

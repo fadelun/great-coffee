@@ -4,8 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { menuItems, categories } from "@/lib/data";
 import MenuCard from "@/components/MenuCard";
-import WhatsAppButton from "@/components/WhatsAppButton";
-import CartToggleButton from "@/components/CartToggleButton";
 
 export default function MenuPage() {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -79,9 +77,6 @@ export default function MenuPage() {
           )}
         </div>
       </section>
-
-      <CartToggleButton />
-      <WhatsAppButton />
     </div>
   );
 }
